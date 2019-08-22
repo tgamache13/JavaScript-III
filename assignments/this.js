@@ -12,14 +12,11 @@
 // Principle 1
 
 // code example for Window Binding
-// 'use strict';
+'use strict';
 
-// function dog(){
-//   console.log(this.bark);
-// }
-// dog();
-// const bark = 'Ruff Ruff';
-// console.log(this);
+
+
+console.log(this);
 
 // Principle 2
 
@@ -36,15 +33,15 @@ const myFamily = {
 // Principle 3
 
 // code example for New Binding
-function myJob(job){
-    this.company = 'Hampton Inn & Suites',
+function myJob(job, company){
+    this.company = company;
     this.job = job;
     this.phrase = function(){
         console.log(`I work as a ${this.job} at ${this.company}.`);
     }
 };
- const nightAudit = new myJob('Night Auditor');
- const gsr = new myJob('GSR');
+ const nightAudit = new myJob('Night Auditor', 'Hampton Inn & Suites');
+ const gsr = new myJob('GSR', 'Hampton Inn & Suites');
 
  nightAudit.phrase();
  gsr.phrase();
@@ -61,6 +58,4 @@ function song(){
      band: 'Godsmack'
  }
 
- mySong = song.bind(favSong);
-
- mySong();
+ song.call(favSong);

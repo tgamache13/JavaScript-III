@@ -12,6 +12,13 @@
 // Principle 1
 
 // code example for Window Binding
+// 'use strict';
+
+// function dog(){
+//   console.log(this.bark);
+// }
+// dog();
+// const bark = 'Ruff Ruff';
 // console.log(this);
 
 // Principle 2
